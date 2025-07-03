@@ -1,0 +1,30 @@
+﻿@model IEnumerable<StokTakip.Entities.Entities.Kategori>
+
+@{
+    ViewData["Title"] = "Kategori Listesi";
+}
+
+<h2>Kategori Listesi</h2>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Ad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Ad</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning">Hiç kategori bulunamadı.</div>
+}
